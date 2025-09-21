@@ -17,7 +17,7 @@ const Home = () => {
               </div>
              <div className="go_chat"> 
               <Link to="chat">
-                  Go to Chat<img src="/src/assets/go_arrow.svg" className="logo"/>
+                  Go to Chat Bot<img src="/src/assets/go_arrow.svg" className="logo"/>
               </Link>
               </div>
             </div>

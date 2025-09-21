@@ -66,7 +66,7 @@ const Sidebar = () => {
             <Link to="/">
                 <div className="sidebar-brand">
                      <img src="src/assets/robot.png" className="logo"/>
-                    <span className="brand-title">Chat</span>
+                    <span className="brand-title">Chat Bot</span>
                 </div>
             </Link>
             <hr />
