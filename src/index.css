@@ -520,7 +520,10 @@ hr {
   display: flex;
   gap: 12px;
 }
-
+.chatbar-actions button{
+  background-color: transparent;
+  border: 0;
+}
 .chatbar-icon img {
   width: 35px;
   padding: 5px;

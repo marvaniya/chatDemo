@@ -5,7 +5,7 @@ const ChatBoat = () => {
                 <div className="chatbar">
                     <input type="text" className="chatbar-input" placeholder="Ask anything" />
                     <span className="chatbar-actions">
-                        <span className="chatbar-icon bg_icon"><img src="src/assets/arrow_cross.svg" /></span>
+                        <button><span className="chatbar-icon bg_icon"><img src="src/assets/arrow_cross.svg" /></span></button>
                     </span>
                 </div>
             </div>
