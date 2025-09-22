@@ -62,11 +62,11 @@ const Sidebar = () => {
     };
 
     return (
-        <div className="sidebar" style={{ left: isOpen ? "0" : "-250px" }}>
+        <div className="sidebar" style={{ left: isOpen ? "0" : "-300px" }}>
             <Link to="/">
                 <div className="sidebar-brand">
                      <img src="src/assets/robot.png" className="logo"/>
-                    <span className="brand-title">Chat Bot</span>
+                    <span className="brand-title">ChatBot</span>
                 </div>
             </Link>
             <hr />
