@@ -498,6 +498,7 @@ hr {
   display: flex;
   align-items: center;
   box-shadow: 0 2px 10px #0001;
+  position: relative;
 }
 
 .chatbar-input {
@@ -531,6 +532,9 @@ hr {
 .chatbar-actions button {
   background-color: transparent;
   border: 0;
+  position: absolute;
+  right: 10px;
+  top: 15px;
 }
 
 .chatbar-icon img {
@@ -676,7 +680,13 @@ hr {
   color: var(--white);
   font-size: 20px;
 }
-
+.microphone{
+  background-color: transparent;
+  border: 0;
+}
+.microphone img{
+  width: 25px;
+}
 /*************************************** end_Chat_Boat ***************************************/
 
 /*************************************** Modal ***************************************/
@@ -1125,7 +1135,6 @@ hr {
 }
 
 .form_right_section {
-  height: 100%;
   width: 30%;
   padding: 10px;
   position: relative;
@@ -1201,7 +1210,7 @@ hr {
   }
 
   .chatbar-wrapper {
-    width: 900px;
+    width: 100%;
   }
 }
 
@@ -1409,9 +1418,7 @@ hr {
     font-size: 22px;
   }
 
-  .form_right_section {
-    height: -webkit-fill-available;
-  }
+ 
 
   .form_auth_section {
     position: relative;

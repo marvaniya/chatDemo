@@ -5,9 +5,11 @@ import Header from "../component/Header";
 import ChatBoat from "../component/ChatBoat";
 
 const Chat = () => {
-
   const [question, setQuestion] = useState("");
-  const [chatHistory, setChatHistory] = useState([]);
+  const [chatHistory, setChatHistory] = useState(() => {
+    const saved = localStorage.getItem("chatHistory");
+    return saved ? JSON.parse(saved) : [];
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -20,6 +22,10 @@ const Chat = () => {
     if (lastMessageRef.current) {
       lastMessageRef.current.scrollIntoView({ behavior: "smooth" });
     }
+  }, [chatHistory]);
+
+  useEffect(() => {
+    localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
   }, [chatHistory]);
 
   const getRequest = async () => {
@@ -80,7 +86,6 @@ const Chat = () => {
         <div className="inner_content">
           <div className="inner_body_section chat_div">
             <div className="chat_section">
-
               {chatHistory.length === 0 && !error && !loading && (
                 <div className="no_chat_found">
                   <img src="src/assets/no-comment.png" alt="No chat" />
@@ -89,7 +94,11 @@ const Chat = () => {
               )}
 
               {error && (
-                <div style={{ color: "red", marginBottom: "1rem", textAlign:"center" }}>{error}</div>
+                <div
+                  style={{ color: "red", marginBottom: "1rem", textAlign: "center" }}
+                >
+                  {error}
+                </div>
               )}
 
               {loading && (
