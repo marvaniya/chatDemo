@@ -1,6 +1,45 @@
-import { Link } from "react-router-dom"
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { API_URLS, API_URL_BASE } from "../API";
 
 const SignIn = () => {
+
+    const navigate = useNavigate();
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    const userSignIn = async (e) => {
+        e.preventDefault()
+
+        try {
+            const response = await fetch(`${API_URL_BASE}${API_URLS.SIGN_IN}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                })
+            })
+
+            const result = await response.json()
+            if (response.ok) {
+                toast.success("Login successful!", { theme: "colored" });
+                setTimeout(() => navigate("/"), 2000);
+                localStorage.setItem('user', JSON.stringify(result.user));
+            } else {
+                toast.error(`${result.message}`, { theme: "colored" });
+            }
+        } catch (err) {
+            console.error("Error:", err);
+            toast.error("Something went wrong! 😢", { theme: "colored" });
+        }
+    }
+
     return (
         <>
             <div className="auth_section">
@@ -12,16 +51,16 @@ const SignIn = () => {
                         </div>
                     </div>
                     <div className="form_right_section">
-                        <form>
+                        <form onSubmit={userSignIn}>
                             <div className="form_auth_section">
                                 <h4>Sign In</h4>
                                 <div className="form_box">
                                     <label>Email Address</label>
-                                    <input type="text" placeholder="Enter Your Email Address" className="input_box" />
+                                    <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Your Email Address" className="input_box" />
                                 </div>
                                 <div className="form_box">
                                     <label>Password</label>
-                                    <input type="text" placeholder="Enter Your Password" className="input_box" />
+                                    <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter Your Password" className="input_box" />
                                 </div>
                                 <div className="form_box">
                                     <button className="auth_action_btn">Sign In</button>
@@ -37,6 +76,7 @@ const SignIn = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer position="bottom-right" autoClose={2000} />
         </>
     )
 }

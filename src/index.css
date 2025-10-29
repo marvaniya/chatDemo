@@ -221,9 +221,7 @@ hr {
 .user_action {
   position: absolute;
   right: 0;
-  background-color: var(--dark_black);
   padding: 0;
-  width: 150px;
   margin-top: 5px;
   border-radius: 5px;
   opacity: 0;
@@ -245,6 +243,7 @@ hr {
   color: var(--white);
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .user_action li:hover {
@@ -468,7 +467,15 @@ hr {
 .back_to_page {
   margin-right: 20px;
 }
-
+.logout_btn{
+  background-color: transparent;
+  padding: 10px 20px;
+  color: #fff;
+  background: #000;
+  border: 0;
+  width: 100%;
+  display: flex;
+}
 /************************************** Body *****************************/
 
 /************************************** Chat_Boat ***************************************/
