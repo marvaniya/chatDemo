@@ -111,14 +111,6 @@ const Chat = () => {
                     </div>
                     <div className="chat_replay">
                       <div className="chat_replay_text">
-                        <div className="chat_action">
-                          <Link to="#">
-                            <img src="src/assets/copy.svg" alt="Copy" />Copy
-                          </Link>
-                          <Link to="#">
-                            <img src="src/assets/export.svg" alt="Export PDF" />Export PDF
-                          </Link>
-                        </div>
                         <h3>{entry.answer}</h3>
                       </div>
                     </div>

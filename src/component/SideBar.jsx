@@ -73,7 +73,7 @@ const Sidebar = () => {
             <div>
                 <div className="menu-section">
                     <Link
-                        to="/chat"
+                        to="#"
                         className="sidebar-item"
                     >
                         <img src="src/assets/edit.svg" className="sidebar_icons" alt="folder" />
