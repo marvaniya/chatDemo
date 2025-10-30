@@ -68,7 +68,7 @@ const ChatBoat = ({ getRequest, question, setQuestion }) => {
                     onClick={handleMicClick}
                 >
                     <img
-                        src="public/assets/microphon.svg"
+                        src="/assets/microphon.svg"
                         alt="mic"
                         style={{ filter: recording ? "invert(40%)" : "none" }}
                     />
@@ -83,7 +83,7 @@ const ChatBoat = ({ getRequest, question, setQuestion }) => {
                 <span className="chatbar-actions">
                     <button onClick={getRequest}>
                         <span className="chatbar-icon bg_icon">
-                            <img src="public/assets/arrow_cross.svg" />
+                            <img src="/assets/arrow_cross.svg" />
                         </span>
                     </button>
                 </span>
