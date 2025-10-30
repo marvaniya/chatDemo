@@ -46,7 +46,7 @@ const SignIn = () => {
                 <div className="form_section">
                     <div className="form_left_section">
                         <div className="full_logo">
-                            <img src="/assets/robot.png" className="" />
+                            <img src="./assets/robot.png" className="" />
                             <h3 className="typewriter">Welcome back. Please sign in to continue.</h3>
                         </div>
                     </div>

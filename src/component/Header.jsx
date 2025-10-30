@@ -27,7 +27,7 @@ const Header = () => {
                 <div className="right_header">
                     <div className="profile_div">
                         <div className="profile_name">
-                            <img src="/assets/profile.svg" className="profile_icon" />
+                            <img src="./assets/profile.svg" className="profile_icon" />
                             <h4>{user?.fullName || "Guest"}</h4>
                         </div>
                         <ul className="user_action">
@@ -36,11 +36,11 @@ const Header = () => {
                                     user ? (
                                         <>
                                             <button onClick={userLogout} className="logout_btn">
-                                                <img src="/assets/profile.svg" className="sign_icon" /> Logout
+                                                <img src="./assets/profile.svg" className="sign_icon" /> Logout
                                             </button></>
                                     ) : (
                                         <Link to="/signin" className="logout_btn">
-                                            <img src="/assets/profile.svg" className="sign_icon" /> Sign In
+                                            <img src="./assets/profile.svg" className="sign_icon" /> Sign In
                                         </Link>
                                     )
                                 }
@@ -48,7 +48,7 @@ const Header = () => {
                             </li>
                         </ul>
                     </div>
-                    <img src="/assets/hamburger.svg" onClick={toggleSidebar} className="toggle_btn" />
+                    <img src="./assets/hamburger.svg" onClick={toggleSidebar} className="toggle_btn" />
                 </div>
             </div>
 

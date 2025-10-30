@@ -88,7 +88,7 @@ const Chat = () => {
             <div className="chat_section">
               {chatHistory.length === 0 && !error && !loading && (
                 <div className="no_chat_found">
-                  <img src="src/assets/no-comment.png" alt="No chat" />
+                  <img src="./assets/no-comment.png" alt="No chat" />
                   <h4>No Chat Found</h4>
                 </div>
               )}

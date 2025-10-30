@@ -65,7 +65,7 @@ const Sidebar = () => {
         <div className="sidebar" style={{ left: isOpen ? "0" : "-300px" }}>
             <Link to="/">
                 <div className="sidebar-brand">
-                     <img src="/assets/robot.png" className="logo"/>
+                     <img src="./assets/robot.png" className="logo"/>
                     <span className="brand-title">ChatBot</span>
                 </div>
             </Link>
@@ -76,14 +76,14 @@ const Sidebar = () => {
                         to="#"
                         className="sidebar-item"
                     >
-                        <img src="/assets/edit.svg" className="sidebar_icons" alt="folder" />
+                        <img src="./assets/edit.svg" className="sidebar_icons" alt="folder" />
                         <span>New chat</span>
                     </Link>
                     <Link
                         to="#"
                         className="sidebar-item"
                     >
-                        <img src="/assets/folder.svg" className="sidebar_icons" alt="folder" />
+                        <img src="./assets/folder.svg" className="sidebar_icons" alt="folder" />
                         <span>New project</span>
                     </Link>
 
@@ -92,9 +92,9 @@ const Sidebar = () => {
                             className="sidebar-item expandable-toggle"
                             onClick={() => togglePanel("Chats")}
                         >
-                            <img src="/assets/folder.svg" className="sidebar_icons" alt="folder" />
+                            <img src="./assets/folder.svg" className="sidebar_icons" alt="folder" />
                             <span>Chats</span>
-                            <img src="/assets/arrow.svg" className="chevron-icon" alt="arrow" />
+                            <img src="./assets/arrow.svg" className="chevron-icon" alt="arrow" />
                         </div>
                         <div className="expandable-content">
                             {["Div 01 - General Requirements", "Div 02 - Existing Conditions", "Div 03 - Concrete", "Div 04 - Masonry", "Div 05 - Metals"].map((text) => (

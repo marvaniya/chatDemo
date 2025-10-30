@@ -1,26 +1,12 @@
 <IfModule mod_rewrite.c>
-    
-RewriteEngine On
-RewriteBase /subdirectory
-RewriteRule ^index\.html$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-l
-RewriteRule . /index.html [L]
+    RewriteEngine On
+    RewriteBase /test/
+
+    # અસ્તિત્વમાં હોય તો direct serve
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # બાકી બધું SPA index.html પર
+    RewriteRule ^ index.html [L]
 </IfModule>
-
-<FilesMatch "apple-app-site-association">
-    ForceType application/json
-</FilesMatch>
-
-<Files ~ "\.(env|config.js|md|gitignore|gitattributes|lock|example)$">
-    Order allow,deny
-    Deny from all
-</Files>
-
-# in here specify full file name sperator '|'
-<Files ~ "(artisan)$">
-    Order allow,deny
-    Deny from all
-</Files>
-
